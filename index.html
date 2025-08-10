@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SolaireCommerce — Composants pour panneaux solaires</title>
+  <meta name="description" content="Vente de composants pour panneaux solaires : panneaux, onduleurs, régulateurs, batteries, fixations. Dropshipping." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">Solaire<span>Commerce</span></a>
+      <nav class="main-nav">
+        <a href="#catalogue">Catalogue</a>
+        <a href="#about">À propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="cart-button" class="cart-btn" aria-label="Panier">
+        🛒 <span id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Composants photovoltaïques — qualité dropshipping</h1>
+        <p>Produits sourcés aux meilleurs tarifs fournisseurs, marge garantie.</p>
+        <a href="#catalogue" class="btn">Voir le catalogue</a>
+      </div>
+    </section>
+
+    <section id="catalogue" class="catalogue container">
+      <div class="catalogue-header">
+        <h2>Catalogue</h2>
+        <div class="catalogue-controls">
+          <input id="search" type="search" placeholder="Rechercher un produit..." />
+          <select id="filter">
+            <option value="all">Tous</option>
+            <option value="panneau">Panneaux</option>
+            <option value="onduleur">Onduleurs</option>
+            <option value="regulateur">Régulateurs</option>
+            <option value="batterie">Batteries</option>
+            <option value="structure">Structures</option>
+            <option value="cable">Câbles & connecteurs</option>
+            <option value="accessoire">Accessoires</option>
+            <option value="kit">Kits</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="products" class="products-grid"></div>
+    </section>
+
+    <section id="about" class="container about">
+      <h2>À propos</h2>
+      <p>Site dropshipping — fournisseurs mondiaux sélectionnés. Livraison à la demande.</p>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2>Contact</h2>
+      <form id="contact-form" class="contact-form">
+        <label>Nom<input name="name" required /></label>
+        <label>Email<input type="email" name="email" required /></label>
+        <label>Message<textarea name="message" rows="4" required></textarea></label>
+        <button type="submit" class="btn">Envoyer</button>
+      </form>
+      <div id="contact-result" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- Cart sidebar -->
+  <aside id="cart" class="cart" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Panier</h3>
+      <button id="close-cart" aria-label="Fermer">✕</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">Total : <strong id="cart-total">0 €</strong></div>
+      <button id="checkout" class="btn primary">Passer au paiement (simulé)</button>
+    </div>
+  </aside>
+
+  <!-- Product modal -->
+  <div id="product-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="close-modal" class="modal-close" aria-label="Fermer">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> SolaireCommerce — Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
